@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nora Shaalan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       background-color: #ffe4ec;
       font-family: 'Courier Prime', Courier, monospace;
+      font-weight: 400;
       color: #1a1a1a;
     }
 
-    /* Sticky left nav */
     nav {
       position: fixed;
       top: 2rem;
@@ -33,14 +33,12 @@
 
     nav a:hover { text-decoration: underline; }
 
-    /* Main content */
     main {
       margin-left: 160px;
       padding: 4rem 4rem 4rem 2rem;
       max-width: 700px;
     }
 
-    /* Each section fades in on scroll */
     section {
       margin-bottom: 5rem;
       opacity: 0;
@@ -64,7 +62,7 @@
 
     h1 {
       font-size: 1.4rem;
-      font-weight: normal;
+      font-weight: 400;
       margin-bottom: 0.5rem;
     }
 
@@ -76,12 +74,9 @@
 
     a { color: inherit; }
 
-    .entry {
-      margin-bottom: 1.5rem;
-    }
-
-    .entry-title { font-style: italic; }
-    .entry-meta { font-size: 0.85rem; margin-top: 0.2rem; }
+    .entry { margin-bottom: 1.5rem; }
+    .entry-title { font-weight: 700; }
+    .entry-meta { font-size: 0.85rem; margin-top: 0.2rem; color: #555; }
 
     footer {
       font-size: 0.75rem;
@@ -94,8 +89,8 @@
 <body>
 
   <nav>
-    <a href="#profile">ABOUT</a>
-    <a href="#CV">CV</a>
+    <a href="#about">ABOUT</a>
+    <a href="#cv">CV</a>
     <a href="#writing">WRITING</a>
     <a href="#teaching">TEACHING</a>
     <a href="#contact">CONTACT</a>
@@ -105,12 +100,9 @@
 
     <section id="about">
       <div class="section-label">Profile</div>
-      <h1>Your Full Name</h1>
+      <h1>Nora Shaalan</h1>
       <p>youremail@example.com</p>
-      <p>
-        Nora Shaalan is a writer and Write a short bio here. Tell people who you are, where you're based, 
-        what you do, and what you're currently working on.
-      </p>
+      <p>Nora Shaalan is a writer and — write a short bio here. Tell people who you are, where you're based, what you do, and what you're currently working on.</p>
     </section>
 
     <section id="cv">
@@ -126,7 +118,7 @@
     </section>
 
     <section id="writing">
-      <div class="section-label">Books, Articles & Essays</div>
+      <div class="section-label">Books, Articles &amp; Essays</div>
       <div class="entry">
         <div class="entry-title">Title of Your Book or Article</div>
         <div class="entry-meta">Publisher or Journal, Year</div>
@@ -159,17 +151,12 @@
   <footer>Last updated 2025</footer>
 
   <script>
-    // Scroll animation: reveal sections as they enter the viewport
     const sections = document.querySelectorAll('section');
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.15 });
-
     sections.forEach(section => observer.observe(section));
   </script>
 
